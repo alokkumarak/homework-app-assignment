@@ -1,0 +1,35 @@
+
+.movieCard{
+  width:270px;
+  box-shadow: rgba(149, 148, 148, 0.603) 0px 3px 6px, rgba(26, 25, 25, 0.23) 0px 3px 6px;
+  margin: 20px 10px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.movieCard:hover{
+    transform: scale(1.03);
+}
+
+.movieCard > img{
+   width: 270px;
+   height: 370px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.movieCard_disc{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.movieCard_title{
+    margin-bottom: 10px;
+    color: rgb(192, 189, 189);
+}
+.movieCard_rating{
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}

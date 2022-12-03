@@ -1,0 +1,51 @@
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.sidenav_header{
+    border-bottom: 1px solid rgb(3, 51, 90);
+}
+.sidenav_header, .navLink{
+  
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px ;
+  font-weight: bold;
+}
+div > .navLink > .MuiSvgIcon-root,.sideNav_logout > .MuiSvgIcon-root{
+  font-size: 35px !important;
+  color: rgb(131, 128, 128, 0.8) !important;
+}
+div > .active{
+    
+    background-color: rgb(230, 17, 194) !important;
+}
+div > .active > .MuiSvgIcon-root{
+    color: white !important;
+}
+.sideNav_logout{
+  position: fixed;
+  bottom: 0px;
+   width: 100px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   margin-left: -50px;
+}
+.sideNav_logout:hover{
+   background-color: rgb(230, 17, 194) !important;
+}
+.sideNav_logout:hover > .MuiSvgIcon-root{
+  color: white !important;
+}
+
+/* .selected{
+  background-color: brown !important;
+} */

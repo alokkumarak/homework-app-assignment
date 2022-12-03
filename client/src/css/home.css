@@ -1,0 +1,113 @@
+.home{
+    /* background-color: aliceblue; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.home_nav{
+    width:100px;
+    height: 100vh;
+ 
+}
+.home_body{
+    width: 100%;
+   
+}
+
+/* profile section  */
+.home_profile{
+    width: 100%;
+    background-color: rgba(4, 44, 97, 0.486);
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 0 30px;
+}
+.home_profileAv{
+    display: flex;
+    align-items: center;
+}
+.home_profileAv > .MuiAvatar-root{
+    width: 70px !important;
+    height: 70px !important;
+}
+.home_profileEmail{
+    margin-left: 15px;
+    font-size: 20px;
+    color: rgb(177, 173, 173);
+}
+.home_profilePost{
+    border-radius: 7px;
+    display: flex;
+    font-size: 23px;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    width: 140px !important;
+    cursor: pointer;
+    background-color: rgba(4, 44, 97, 0.9);
+    color: rgb(209, 203, 203) !important;
+    
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.home_profilePost > .MuiSvgIcon-root{
+   font-size: 30px !important;
+   margin-right: 10px !important;
+}
+.home_profilePost:hover{
+ 
+   box-shadow: rgba(164, 169, 173, 0.3) 0px 1px 2px 0px, rgba(148, 160, 170, 0.15) 0px 2px 6px 2px;
+}
+
+ 
+.home_profileMyScroll{
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+}
+
+.home_profileMyScroll::-webkit-scrollbar{
+    display: none;
+}
+
+.home_proMyMovies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile_hover{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.profile_extraIcons{
+    position: absolute;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: flex;
+   width: 90%;
+   height: 90%;
+   border-radius: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: all 1s ease-out;
+
+}
+
+.profile_extraIcon{
+    background-color:  rgba(0, 0, 0, 0.8);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile_extraIcon > .MuiSvgIcon-root{
+    font-size: 30px !important;
+    color: rgb(231, 228, 228) !important;
+}

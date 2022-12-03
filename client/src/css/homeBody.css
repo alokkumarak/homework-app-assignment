@@ -1,0 +1,109 @@
+.homeBody_search{
+    width: 100%;
+    background-color: rgba(4, 44, 97, 0.486);
+    height: 80px;
+    display: flex;
+   align-items: center;
+   padding-left: 30px;
+}
+.homeBody_search > .MuiSvgIcon-root{
+    font-size: 40px !important;
+    color: rgb(185, 180, 180) !important;
+}
+.homeBody_search > input{
+    height: 60px;
+    width: 80%;
+    font-size: 18px;
+    padding-left: 30px;
+    background-color: transparent;
+    border: none;
+    color:rgb(185, 180, 180);
+}
+.homeBody_search > input:focus{
+    outline: none;
+}
+
+.homeBody_bottom{
+    display: flex;
+   
+    /* background-color: gray; */
+}
+.homeBody_bottomNav{
+    width: 300px;
+    background-color: rgb(2, 33, 58);
+    display: flex;
+    flex-direction: column;
+ 
+    /* align-items: center; */
+}
+.homeBody_BNTitle{
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: rgb(216, 212, 212);
+    border-bottom: 1px solid rgb(200, 199, 199);
+    padding-bottom: 20px;
+       padding-left: 50px;
+}
+
+
+.homeBody_GenresV{
+    padding-left: 50px;
+    font-size: 17px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: gray;
+}
+.homeBody_GenresV:hover{
+   color: rgb(180, 180, 5);
+}
+/* .homeBody_Genres{
+    height: 100%;
+    background-color: aliceblue;
+} */
+.homeBody_bottomR{
+    width: 100%;
+    padding: 20px;
+}
+.homeBody_BRHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+.homeBody_BRList{
+   color: rgb(180, 180, 5);
+   font-size: 18px; 
+}
+.homeBody_BRFilter{
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+.dropdown{
+    margin-left: 20px;
+    height: 35px;
+    background-color: rgb(4, 66, 116);
+    display: flex;
+    align-items: center;
+    width: 140px;
+    justify-content: center;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.homeBody_Scroll{
+    height: calc(100vh - 160px);
+    overflow-y: scroll;
+}
+
+.homeBody_Scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.homeBody_movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
