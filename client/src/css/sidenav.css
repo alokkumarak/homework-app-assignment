@@ -37,7 +37,7 @@ div > .active > .MuiSvgIcon-root{
    justify-content: center;
    align-items: center;
    cursor: pointer;
-   margin-left: -50px;
+   /* margin-left: -50px; */
 }
 .sideNav_logout:hover{
    background-color: rgb(230, 17, 194) !important;

@@ -13,6 +13,7 @@ app.use(bodyParser.json())
 
 require("./models/MovieModel.js");
 require("./models/UserModel.js");
+require("./models/GenresModel.js");
 
 app.use(express.json());
 app.use(require("./routers/LogInSign"));
