@@ -105,11 +105,11 @@ router.get("/allmovie", Mustsignin, (req, res) => {
  
   const search=req.query.search || "";
   let sort = req.query.sort || "-createdAt";
-  let genre=req.query.genre || "All";
+  let genre=req.query.genre || "";
   
   // console.log(genre)
   // console.log(GenOptions);
-  genre==="All" ? (genre=[...GenOptions]) :genre;
+  // genre==="All" ? (genre=[...GenOptions]) : genre;
 
   req.query.sort?(sort=req.query.sort.split(",")) : (sort=[sort]);
 
@@ -124,7 +124,8 @@ router.get("/allmovie", Mustsignin, (req, res) => {
 
 
   movies
-    .find({name:{$regex:search, $options:"i"}})
+    .find({ originalTitle: { $regex: search, $options: "i" } })
+    .find({ genres: { $regex: genre, $options: "i" } })
     .where("genre")
     .in(genre)
     .populate("createdBy", "_id email")

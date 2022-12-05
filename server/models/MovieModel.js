@@ -59,4 +59,15 @@ const MovieModel = new mongoose.Schema(
   { timestamps: true }
 );
 
+// MovieModel.index({
+//   originalTitle: "text",
+//   title:"text"
+// },{
+//   weights:{
+//     originalTitle:5,
+//     title:1
+//   }
+// }
+// );
+
 mongoose.model("movies", MovieModel);
