@@ -19,16 +19,18 @@ function HomeBody() {
     };
 
     const [allMovie,setAllMovie]=useState([]);
+   
     const [genAll,setGenAll]=useState([])
 
     // create searching sorting filter by genres
     const [sort, setSort] = useState({ sort: "-createdAt", order: "desc" });
-    const [filterGenre, setFilterGenre] = useState();
+    const [filterGenre, setFilterGenre] = useState("");
     const [search, setSearch] = useState("");
   
     useEffect(() => {
+      // genre=${filterGenre}
       fetch(
-        `/allmovie?genre=${filterGenre}&sort=${sort.sort},${sort.order}&search=${search}`,
+        `/allmovie?&sort=${sort.sort},${sort.order}&search=${search}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("movieToken"),
@@ -95,13 +97,14 @@ function HomeBody() {
               <div className="homeBody_Genres">
                 <div
                   className="homeBody_GenresV"
-                  onClick={() => setFilterGenre([])}
+                  onClick={() => setFilterGenre("")}
                 >
                   All
                 </div>
                 {genAll.map((gen) => {
                   return (
                     <div
+                      key={gen.genres}
                       className="homeBody_GenresV"
                       onClick={() => setFilterGenre(gen.genres)}
                     >
@@ -110,35 +113,9 @@ function HomeBody() {
                   );
                 })}
 
-                {/* {genAll.map((gen)=>{
-                  const genenen=gen.genres
-                return (
-                  <div className="something" key={genenen}>
-                    <input
-                      className="input"
-                      type="checkbox"
-                      value={genenen}
-                      onChange={onChange}
-                    />
-                    <p className="someLable">{genenen}</p>
-                  </div>
-                );
-                })
-              } */}
+               
 
-                {/* <div className="homeBody_GenresV">All</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Adventure</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Adventure</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Adventure</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Adventure</div>
-                <div className="homeBody_GenresV">Action</div>
-                <div className="homeBody_GenresV">Adventure</div>
-                <div className="homeBody_GenresV">Action</div> */}
+              
               </div>
             </div>
             <div className="homeBody_bottomR">
@@ -172,6 +149,7 @@ function HomeBody() {
                   {allMovie.map((mov) => {
                     return (
                       <MovieCard
+                      key={mov._id}
                         poster={mov.poster}
                         imdb={mov.imdbRating}
                         originalTitle={mov.originalTitle}

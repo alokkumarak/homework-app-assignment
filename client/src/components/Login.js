@@ -12,33 +12,36 @@ function Login() {
   const [errLog,setErrLog]=useState("")
 
  const login = () => {
-   fetch("/signin", {
-     method: "post",
-     headers: {
-       "Content-Type": "application/json",
-     },
-     body: JSON.stringify({
-       email,
-       password,
-     }),
-   })
-     .then((res) => res.json())
-     .then((signinData) => {
-       if (signinData.error) {
-         setErrLog(signinData.error)
-       } else {
-          console.log(signinData.message)
-          
-         localStorage.setItem("movieToken", signinData.token);
-         localStorage.setItem("user", JSON.stringify(signinData.user));
+   
+fetch("/signin", {
+  method: "post",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email,
+    password,
+  }),
+})
+  .then((res) => res.json())
+  .then((signinData) => {
+    if (signinData.error) {
+      setErrLog(signinData.error);
+    } else {
+      console.log(signinData.message);
 
-         dispatch({ type: "USER", payload: signinData.user });
-         navigate("/home");
-         setEmail("");
-         setPassword("");
-       }
-     })
-     .catch((error) => console.log(error));
+      localStorage.setItem("movieToken", signinData.token);
+      localStorage.setItem("user", JSON.stringify(signinData.user));
+
+      dispatch({ type: "USER", payload: signinData.user });
+      navigate("/home");
+      setEmail("");
+      setPassword("");
+    }
+  })
+  .catch((error) => console.log(error));
+  
+   
  };
 
 

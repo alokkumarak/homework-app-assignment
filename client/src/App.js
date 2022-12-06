@@ -10,11 +10,13 @@ import Home from "./components/Home";
 // import Profile from "./components/MyMovie";
 import { initialState, reducer } from "./context/reducer";
 import MyMovie from "./components/MyMovie";
+
 export const UserContext = createContext();
 
 const Routing = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(UserContext);
+  
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -28,12 +30,14 @@ const Routing = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route exact path="/" element={<SignUp />} />
-      <Route path="/login" element={<Login />} />  
-      <Route path="/home" element={<Home />} />
-      <Route exact path="/profile" element={<MyMovie />} />
-    </Routes>
+   
+        <Routes>
+          <Route exact path="/" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route exact path="/profile" element={<MyMovie />} />
+        </Routes>
+     
   );
 };
 

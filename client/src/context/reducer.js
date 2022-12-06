@@ -8,11 +8,8 @@ export const reducer = (state, action) => {
   if (action.type === "CLEAR") {
     return null;
   }
-  if (action.type === "UPDATEPROFILE") {
-    return {
-      ...state,
-      profile: action.payload,
-    };
+  if (action.type === "ADMIN") {
+    return action.payload;
   }
   return state;
 };

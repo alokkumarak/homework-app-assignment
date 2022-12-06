@@ -18,6 +18,7 @@ require("./models/GenresModel.js");
 app.use(express.json());
 app.use(require("./routers/LogInSign"));
 app.use(require("./routers/Movies"));
+app.use(require("./routers/User"));
 
 
 

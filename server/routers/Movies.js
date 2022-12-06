@@ -105,7 +105,7 @@ router.get("/allmovie", Mustsignin, (req, res) => {
  
   const search=req.query.search || "";
   let sort = req.query.sort || "-createdAt";
-  let genre=req.query.genre || "";
+  let genre=req.query.genre || "All";
   
   // console.log(genre)
   // console.log(GenOptions);
@@ -120,14 +120,18 @@ router.get("/allmovie", Mustsignin, (req, res) => {
   else{
     sortBy[sort[0]]="asc";
   }
-   
-
-
+  
   movies
+    // .find({
+    //   $or: [
+    //     { genres: { $regex: genre, $options: "i" } },
+    //     { originalTitle: { $regex: search, $options: "i" } },
+    //   ],
+    // })
     .find({ originalTitle: { $regex: search, $options: "i" } })
-    .find({ genres: { $regex: genre, $options: "i" } })
-    .where("genre")
-    .in(genre)
+    // .find({ genres: { $regex: genre, $options: "i" } })s
+    // .where("genres")
+    // .in([...genre])
     .populate("createdBy", "_id email")
     .sort(sortBy)
     .then((movies) => {
